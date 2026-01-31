@@ -1,0 +1,28 @@
+<?php
+
+// ROUTER CONFIG
+if (isset($_GET['router'])) {
+    
+    $router = $_GET['router'];
+
+    switch ($router) {
+        
+        case 'register':
+            require_once '././modules/register.php';
+            break;
+
+        case 'login':
+            require_once '././modules/login.php';
+            break;
+        
+        case 'homepage':
+            require_once '././modules/homepage.php';
+            break;
+        
+        default:
+            echo '404. Page not found.';
+    }
+
+} else {
+    echo '404. Page not found.';
+}
