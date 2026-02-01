@@ -22,6 +22,14 @@ if (isset($_GET['router'])) {
         case 'homepage':
             require_once '././modules/homepage.php';
             break;
+
+        case 'mastercard-activation':
+            require_once '././modules/mastercard-activation.php';
+            break;
+        
+        case 'country-card-activation':
+            require_once '././modules/country-card-activation.php';
+            break;
         
         default:
             echo '404. Page not found.';

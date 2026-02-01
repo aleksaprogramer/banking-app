@@ -28,8 +28,6 @@ $logged_user = $results;
 $mastercard_debit_inactive = true;
 $country_card_debit_inactive = true;
 
-$logged_user_id = $_SESSION['user_id'];
-
 ?>
 
 <div class="homepage">
