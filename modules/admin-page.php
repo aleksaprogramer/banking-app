@@ -23,10 +23,20 @@ FROM accounts WHERE is_admin = 0";
 $run = $db->query($sql);
 $results = $run->fetch_all(MYSQLI_ASSOC);
 
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    session_destroy();
+    header("Location: http://localhost/projects/banking-app/?router=login");
+    exit();
+}
+
 ?>
 
 <div class="admin-page">
     <h2>Admin page</h2>
+
+    <form method="POST">
+        <button type="submit">Logout</button>
+    </form>
 
     <?php foreach ($results as $acc): ?>
         <div class="account"><br>
