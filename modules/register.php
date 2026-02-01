@@ -23,6 +23,8 @@ $phone_number_error = false;
 $email_error = false;
 $pin_error = false;
 
+$success_message = false;
+
 // Registration
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
@@ -76,6 +78,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $run = $db->prepare($sql);
         $run->bind_param("ssssss", $first_name, $last_name, $phone_number, $email, $hashed_pin, $last_login);
         $run->execute();
+
+        $success_message = 'New account successfully created';
     }
 }
 
@@ -110,6 +114,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <p><?php echo $pin_error; ?></p>
         <?php endif; ?>
 
-        <button type="submit">Register new account</button>
+        <button type="submit">Register new account</button><br><br>
+
+        <?php if ($success_message): ?>
+            <p><?php echo $success_message; ?></p>
+        <?php endif; ?>
     </form>
 </div>

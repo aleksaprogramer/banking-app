@@ -11,6 +11,10 @@ if (isset($_GET['router'])) {
             require_once '././modules/register.php';
             break;
 
+        case 'admin-page':
+            require_once '././modules/admin-page.php';
+            break;
+
         case 'login':
             require_once '././modules/login.php';
             break;
