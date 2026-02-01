@@ -17,10 +17,8 @@ if ($results['mastercard_debit'] === '1') {
     exit();
 }
 
-$logged_user_id = (int)$_SESSION['user_id'];
-
 // Activating mastercard
-$mastercard_error = false;
+$logged_user_id = (int)$_SESSION['user_id'];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 

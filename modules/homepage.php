@@ -25,8 +25,16 @@ $results = $run->fetch_assoc();
 $logged_user = $results;
 
 // Debit cards
-$mastercard_debit_inactive = true;
-$country_card_debit_inactive = true;
+$mastercard_debit_active = false;
+$country_card_debit_active = false;
+
+if ($logged_user['mastercard_debit'] === "1") {
+    $mastercard_debit_active = true;
+}
+
+if ($logged_user['country_card_debit'] === "1") {
+    $country_card_debit_active = true;
+}
 
 ?>
 
@@ -41,7 +49,14 @@ $country_card_debit_inactive = true;
 
         <div class="debit-cards">
             <h4>Mastercard debit: <?php echo $logged_user['mastercard_debit'] ? 'Active' : 'Inactive' ?></h4>
+            <?php if (!$mastercard_debit_active): ?>
+                <a href="http://localhost/projects/banking-app/?router=mastercard-activation">Activate</a>
+            <?php endif; ?>
+
             <h4>Country card debit: <?php echo $logged_user['country_card_debit'] ? 'Active' : 'Inactive' ?></h4>
+            <?php if (!$country_card_debit_active): ?>
+                <a href="http://localhost/projects/banking-app/?router=country-card-activation">Activate</a>
+            <?php endif; ?>
         </div>
     </div>
 </div>
