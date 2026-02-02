@@ -17,12 +17,15 @@ if ($results['is_admin'] === '1') {
     exit();
 }
 
-$sql = "SELECT mastercard_debit, country_card_debit, account_in_usd, account_in_eur
+$sql = "SELECT first_name, mastercard_debit, country_card_debit, account_in_usd, account_in_eur
 FROM accounts WHERE id = $current_user_id";
 $run = $db->query($sql);
 $results = $run->fetch_assoc();
 
 $logged_user = $results;
+
+// Username
+$username = $logged_user['first_name'];
 
 // Debit cards
 $mastercard_debit_active = false;
@@ -41,6 +44,10 @@ if ($logged_user['country_card_debit'] === "1") {
 <div class="homepage">
     <h2>Homepage</h2>
 
+    <?php if ($username): ?>
+        <h3>Welcome, <?php echo $username ?></h3>
+    <?php endif; ?>
+
     <div class="account-informations">
         <div class="accounts">
             <h4>Account in USD: <?php echo $logged_user['account_in_usd'] ?></h4>
@@ -58,7 +65,7 @@ if ($logged_user['country_card_debit'] === "1") {
                 <a href="http://localhost/projects/banking-app/?router=country-card-activation">Activate</a>
             <?php endif; ?>
         </div>
-    </div>
+    </div><br>
 
     <a href="http://localhost/projects/banking-app/?router=paying">Make a payment</a>
 </div>

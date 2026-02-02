@@ -28,7 +28,6 @@ $recipient_phone_number_error = false;
 $amount_error = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
     $recipient_phone_number = htmlspecialchars(trim($_POST['recipient-phone-number']));
     $amount = htmlspecialchars(trim($_POST['amount']));
     $currency = 'USD';
@@ -101,6 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <div class="paying">
     <h2>Paying</h2>
+
+    <a href="http://localhost/projects/banking-app/?router=homepage">Back to homepage</a><br><br>
 
     <form method="POST">
         <input type="text" name="recipient-phone-number" placeholder="Recipient phone number"><br><br>
