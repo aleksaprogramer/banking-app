@@ -49,8 +49,13 @@ if ($logged_user['country_card_debit'] === "1") {
             <h3>Welcome, <?php echo $username ?></h3>
         <?php endif; ?>
 
+        <div class="switch-buttons">
+            <button class="active-btn" id="balance-btn">Balance</button>
+            <button id="cards-btn">Cards</button>
+        </div>
+
         <div class="account-informations">
-            <div class="accounts">
+            <div class="accounts show">
                 <h4>Account in USD: <?php echo $logged_user['account_in_usd'] ?></h4>
                 <h4>Account in EUR: <?php echo $logged_user['account_in_eur'] ?></h4>
             </div>
@@ -68,6 +73,6 @@ if ($logged_user['country_card_debit'] === "1") {
             </div>
         </div>
 
-        <a href="http://localhost/projects/banking-app/?router=paying">Make a payment</a>
+        <a href="http://localhost/projects/banking-app/?router=paying" class="payment-link">Make a payment</a>
     </div>
 </div>
