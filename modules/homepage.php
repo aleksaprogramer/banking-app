@@ -59,4 +59,6 @@ if ($logged_user['country_card_debit'] === "1") {
             <?php endif; ?>
         </div>
     </div>
+
+    <a href="http://localhost/projects/banking-app/?router=paying">Make a payment</a>
 </div>

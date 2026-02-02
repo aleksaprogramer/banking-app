@@ -30,6 +30,10 @@ if (isset($_GET['router'])) {
         case 'country-card-activation':
             require_once '././modules/country-card-activation.php';
             break;
+
+        case 'paying':
+            require_once '././modules/paying.php';
+            break;
         
         default:
             echo '404. Page not found.';
