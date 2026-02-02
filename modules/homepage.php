@@ -39,6 +39,13 @@ if ($logged_user['country_card_debit'] === "1") {
     $country_card_debit_active = true;
 }
 
+// Logging out
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    session_destroy();
+    header("Location: http://localhost/projects/banking-app/?router=login");
+    exit();
+}
+
 ?>
 
 <div class="homepage">
@@ -74,5 +81,9 @@ if ($logged_user['country_card_debit'] === "1") {
         </div>
 
         <a href="http://localhost/projects/banking-app/?router=paying" class="payment-link">Make a payment</a>
+
+        <form method="POST">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
     </div>
 </div>

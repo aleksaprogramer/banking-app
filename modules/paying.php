@@ -99,21 +99,23 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="paying">
-    <h2>Paying</h2>
+    <div class="container">
+        <h2>Paying</h2>
 
-    <a href="http://localhost/projects/banking-app/?router=homepage">Back to homepage</a><br><br>
+        <a href="http://localhost/projects/banking-app/?router=homepage" class="back-to-homepage-link">Back to homepage</a>
 
-    <form method="POST">
-        <input type="text" name="recipient-phone-number" placeholder="Recipient phone number"><br><br>
-        <?php if ($recipient_phone_number_error): ?>
-            <p><?php echo $recipient_phone_number_error ?></p>
-        <?php endif; ?>
+        <form method="POST">
+            <input type="text" name="recipient-phone-number" placeholder="Recipient phone number">
+            <?php if ($recipient_phone_number_error): ?>
+                <p class="error-message"><?php echo $recipient_phone_number_error ?></p>
+            <?php endif; ?>
 
-        <input type="text" name="amount" placeholder="Amount"> $<br><br>
-        <?php if ($amount_error): ?>
-            <p><?php echo $amount_error ?></p>
-        <?php endif; ?>
+            <input type="text" name="amount" placeholder="Amount in USD">
+            <?php if ($amount_error): ?>
+                <p class="error-message"><?php echo $amount_error ?></p>
+            <?php endif; ?>
 
-        <button type="submit">Make a payment</button>
-    </form>
+            <button type="submit">Make a payment</button>
+        </form>
+    </div>
 </div>
