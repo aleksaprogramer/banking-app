@@ -53,19 +53,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="login">
-    <h2>Login</h2>
+    <div class="container">
+        <h2>Login</h2>
 
-    <form method="POST">
-        <input type="text" name="phone-number" placeholder="Phone number"><br><br>
-        <?php if ($phone_number_error): ?>
-            <p><?php echo $phone_number_error; ?></p>
-        <?php endif; ?>
+        <form method="POST">
+            <input type="text" name="phone-number" placeholder="Phone number">
+            <?php if ($phone_number_error): ?>
+                <p class="error-message"><?php echo $phone_number_error; ?></p>
+            <?php endif; ?>
 
-        <input type="password" name="pin" maxlength="4" placeholder="PIN"><br><br>
-        <?php if ($pin_error): ?>
-            <p><?php echo $pin_error; ?></p>
-        <?php endif; ?>
+            <input type="password" name="pin" maxlength="4" placeholder="PIN">
+            <?php if ($pin_error): ?>
+                <p class="error-message"><?php echo $pin_error; ?></p>
+            <?php endif; ?>
 
-        <button type="submit">Login</button>
-    </form>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </div>

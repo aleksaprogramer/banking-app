@@ -32,24 +32,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="admin-page">
-    <h2>Admin page</h2>
+    <div class="container">
+        <h2>Admin page</h2>
 
-    <form method="POST">
-        <button type="submit">Logout</button>
-    </form>
+        <form method="POST">
+            <button type="submit" class="logout-btn">Logout</button>
+        </form>
 
-    <?php foreach ($results as $acc): ?>
-        <div class="account"><br>
-            <p>First name: <?php echo $acc['first_name'] ?></p>
-            <p>Last name: <?php echo $acc['last_name'] ?></p>
-            <p>Phone number: <?php echo $acc['phone_number'] ?></p>
-            <p>Email: <?php echo $acc['email'] ?></p>
-            <p>Last login: <?php echo $acc['last_login'] ?></p>
-            <p>Mastercard debit: <?php echo $acc['mastercard_debit'] ?></p>
-            <p>Country card debit: <?php echo $acc['country_card_debit'] ?></p>
-            <p>Account in USD: <?php echo $acc['account_in_usd'] ?></p>
-            <p>Account in EUR: <?php echo $acc['account_in_eur'] ?></p>
-            <p>Created at: <?php echo $acc['created_at'] ?></p>
-        </div><br>
-    <?php endforeach; ?>
+        <?php foreach ($results as $acc): ?>
+            <div class="account">
+                <p>First name: <span><?php echo $acc['first_name'] ?></span></p>
+                <p>Last name: <span><?php echo $acc['last_name'] ?></span></p>
+                <p>Phone number: <span class="phone-number"><?php echo $acc['phone_number'] ?></span></p>
+                <p>Email: <span class="email"><?php echo $acc['email'] ?></span></p>
+                <p>Last login: <span><?php echo $acc['last_login'] ?></span></p>
+                <p>Mastercard debit: <span><?php echo $acc['mastercard_debit'] ?></span></p>
+                <p>Country card debit: <span><?php echo $acc['country_card_debit'] ?></span></p>
+                <p class="account-in-usd">Account in USD: <span><?php echo $acc['account_in_usd'] ?></span></p>
+                <p class="account-in-eur">Account in EUR: <span><?php echo $acc['account_in_eur'] ?></span></p>
+                <p>Created at: <span><?php echo $acc['created_at'] ?></span></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
 </div>

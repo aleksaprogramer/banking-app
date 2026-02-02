@@ -1,0 +1,49 @@
+.admin-page {
+    padding-top: 20px;
+}
+
+.admin-page h2 {
+    margin-bottom: 10px;
+}
+
+.admin-page .logout-btn {
+    outline: none;
+    background-color: #f9f9f9;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    border: 1px solid #f9f9f9;
+    color: #2a2a2a;
+    font-weight: 600;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.admin-page .logout-btn:hover {
+    background-color: #2a2a2a;
+    color: #f9f9f9;
+}
+
+.admin-page .account {
+    margin-bottom: 40px;
+}
+
+.admin-page .account p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.admin-page .account p span {
+    color: #08be32;
+}
+
+.admin-page .account p .phone-number, .email {
+    background-color: #181818;
+}
+
+.admin-page .account .account-in-usd, .account-in-eur {
+    color: #00de34;
+}

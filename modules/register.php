@@ -86,38 +86,40 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="register">
-    <h2>Register (for admins only)</h2>
+    <div class="container">
+        <h2>Register (for admins only)</h2>
 
-    <form method="POST">
-        <input type="text" name="first-name" placeholder="First name"><br><br>
-        <?php if ($first_name_error): ?>
-            <p><?php echo $first_name_error; ?></p>
-        <?php endif; ?>
+        <form method="POST">
+            <input type="text" name="first-name" placeholder="First name">
+            <?php if ($first_name_error): ?>
+                <p class="error-message"><?php echo $first_name_error; ?></p>
+            <?php endif; ?>
 
-        <input type="text" name="last-name" placeholder="Last name"><br><br>
-        <?php if ($last_name_error): ?>
-            <p><?php echo $last_name_error; ?></p>
-        <?php endif; ?>
+            <input type="text" name="last-name" placeholder="Last name">
+            <?php if ($last_name_error): ?>
+                <p class="error-message"><?php echo $last_name_error; ?></p>
+            <?php endif; ?>
 
-        <input type="text" name="phone-number" placeholder="Phone number"><br><br>
-        <?php if ($phone_number_error): ?>
-            <p><?php echo $phone_number_error; ?></p>
-        <?php endif; ?>
+            <input type="text" name="phone-number" placeholder="Phone number">
+            <?php if ($phone_number_error): ?>
+                <p class="error-message"><?php echo $phone_number_error; ?></p>
+            <?php endif; ?>
 
-        <input type="email" name="email" placeholder="Email"><br><br>
-        <?php if ($email_error): ?>
-            <p><?php echo $email_error; ?></p>
-        <?php endif; ?>
+            <input type="email" name="email" placeholder="Email">
+            <?php if ($email_error): ?>
+                <p class="error-message"><?php echo $email_error; ?></p>
+            <?php endif; ?>
 
-        <input type="password" name="pin" placeholder="PIN" maxlength="4"><br><br>
-        <?php if ($pin_error): ?>
-            <p><?php echo $pin_error; ?></p>
-        <?php endif; ?>
+            <input type="password" name="pin" placeholder="PIN" maxlength="4">
+            <?php if ($pin_error): ?>
+                <p class="error-message"><?php echo $pin_error; ?></p>
+            <?php endif; ?>
 
-        <button type="submit">Register new account</button><br><br>
+            <button type="submit">Register new account</button>
 
-        <?php if ($success_message): ?>
-            <p><?php echo $success_message; ?></p>
-        <?php endif; ?>
-    </form>
+            <?php if ($success_message): ?>
+                <p><?php echo $success_message; ?></p>
+            <?php endif; ?>
+        </form>
+    </div>
 </div>

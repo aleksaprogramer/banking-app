@@ -42,30 +42,32 @@ if ($logged_user['country_card_debit'] === "1") {
 ?>
 
 <div class="homepage">
-    <h2>Homepage</h2>
+    <div class="container">
+        <h2>Homepage</h2>
 
-    <?php if ($username): ?>
-        <h3>Welcome, <?php echo $username ?></h3>
-    <?php endif; ?>
+        <?php if ($username): ?>
+            <h3>Welcome, <?php echo $username ?></h3>
+        <?php endif; ?>
 
-    <div class="account-informations">
-        <div class="accounts">
-            <h4>Account in USD: <?php echo $logged_user['account_in_usd'] ?></h4>
-            <h4>Account in EUR: <?php echo $logged_user['account_in_eur'] ?></h4>
+        <div class="account-informations">
+            <div class="accounts">
+                <h4>Account in USD: <?php echo $logged_user['account_in_usd'] ?></h4>
+                <h4>Account in EUR: <?php echo $logged_user['account_in_eur'] ?></h4>
+            </div>
+
+            <div class="debit-cards">
+                <h4>Mastercard debit: <?php echo $logged_user['mastercard_debit'] ? 'Active' : 'Inactive' ?></h4>
+                <?php if (!$mastercard_debit_active): ?>
+                    <a href="http://localhost/projects/banking-app/?router=mastercard-activation">Activate</a>
+                <?php endif; ?>
+
+                <h4>Country card debit: <?php echo $logged_user['country_card_debit'] ? 'Active' : 'Inactive' ?></h4>
+                <?php if (!$country_card_debit_active): ?>
+                    <a href="http://localhost/projects/banking-app/?router=country-card-activation">Activate</a>
+                <?php endif; ?>
+            </div>
         </div>
 
-        <div class="debit-cards">
-            <h4>Mastercard debit: <?php echo $logged_user['mastercard_debit'] ? 'Active' : 'Inactive' ?></h4>
-            <?php if (!$mastercard_debit_active): ?>
-                <a href="http://localhost/projects/banking-app/?router=mastercard-activation">Activate</a>
-            <?php endif; ?>
-
-            <h4>Country card debit: <?php echo $logged_user['country_card_debit'] ? 'Active' : 'Inactive' ?></h4>
-            <?php if (!$country_card_debit_active): ?>
-                <a href="http://localhost/projects/banking-app/?router=country-card-activation">Activate</a>
-            <?php endif; ?>
-        </div>
-    </div><br>
-
-    <a href="http://localhost/projects/banking-app/?router=paying">Make a payment</a>
+        <a href="http://localhost/projects/banking-app/?router=paying">Make a payment</a>
+    </div>
 </div>
