@@ -105,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="transactions">
             <?php foreach ($transactions as $transaction): ?>
                 <div class="transaction">
-                    <p>Sender ID: <?php
+                    <p>Sender: <?php
                     
                     $sender_id = $transaction['sender_id'];
                     $sql = "SELECT first_name FROM accounts WHERE id = $sender_id";
@@ -114,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     echo $results['first_name'];
                     
                     ?></p>
-                    <p>Recipient ID: <?php
+                    <p>Recipient: <?php
                     
                     $recipient_id = $transaction['recipient_id'];
                     $sql = "SELECT first_name FROM accounts WHERE id = $recipient_id";
