@@ -56,6 +56,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <h3>Welcome, <?php echo $username ?></h3>
         <?php endif; ?>
 
+        <a href="http://localhost/projects/banking-app/?router=profile" class="profile-link">Profile</a>
+
         <div class="switch-buttons">
             <button class="active-btn" id="balance-btn">Balance</button>
             <button id="cards-btn">Cards</button>

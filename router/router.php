@@ -34,6 +34,10 @@ if (isset($_GET['router'])) {
         case 'paying':
             require_once '././modules/paying.php';
             break;
+
+        case 'profile':
+            require_once '././modules/profile.php';
+            break;
         
         default:
             echo '404. Page not found.';

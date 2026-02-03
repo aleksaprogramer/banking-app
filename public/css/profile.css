@@ -1,0 +1,23 @@
+.profile {
+    padding-top: 20px;
+}
+
+.profile h2 {
+    margin-bottom: 20px;
+}
+
+.profile .back-to-homepage-link {
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.profile .back-to-homepage-link:hover {
+    text-decoration: none;
+}
+
+.profile .account-info p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}

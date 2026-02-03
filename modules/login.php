@@ -43,6 +43,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             $logged_user = $current_user;
             $_SESSION['user_id'] = $logged_user['id'];
+
+            // Updating last login
+            $logged_user_id = (int)$logged_user['id'];
+            $login_time = date('Y-m-d H:i:s');
+
+            $sql = "UPDATE accounts SET last_login = ? WHERE id = ?";
+            $run = $db->prepare($sql);
+            $run->bind_param("si", $login_time, $logged_user_id);
+            $run->execute();
             
             header("Location: http://localhost/projects/banking-app/?router=homepage");
             exit();

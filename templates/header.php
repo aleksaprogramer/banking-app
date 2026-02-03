@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="././public/css/paying.css">
     <link rel="stylesheet" href="././public/css/mastercard-activation.css">
     <link rel="stylesheet" href="././public/css/country-card-activation.css">
+    <link rel="stylesheet" href="././public/css/profile.css">
     <script defer src="././public/js/script.js"></script>
     <title>Banking App</title>
 </head>
