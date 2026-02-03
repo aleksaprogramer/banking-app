@@ -103,6 +103,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </form>
 
         <div class="transactions">
+            <h3>Transactions</h3>
+
             <?php foreach ($transactions as $transaction): ?>
                 <div class="transaction">
                     <p>Sender: <?php
@@ -129,6 +131,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <p>Created at: <?php echo $transaction['created_at'] ?></p>
                 </div>
             <?php endforeach; ?>    
+        </div>
+
+        <div class="exchange-rates">
+            <h3>Exchange Rates</h3>
+
+            <div class="exchange-rates-container"></div>
         </div>
     </div>
 </div>
