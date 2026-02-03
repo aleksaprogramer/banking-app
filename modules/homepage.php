@@ -23,6 +23,7 @@ $run = $db->query($sql);
 $results = $run->fetch_assoc();
 
 $logged_user = $results;
+$logged_user_id = $_SESSION['user_id'];
 
 // Username
 $username = $logged_user['first_name'];
@@ -38,6 +39,19 @@ if ($logged_user['mastercard_debit'] === "1") {
 if ($logged_user['country_card_debit'] === "1") {
     $country_card_debit_active = true;
 }
+
+// Displaying transactions
+$sql = "SELECT sender_id, recipient_id, amount, currency, tr_status, created_at
+FROM transactions
+WHERE sender_id = $logged_user_id UNION
+SELECT sender_id, recipient_id, amount, currency, tr_status, created_at
+FROM transactions
+WHERE recipient_id = $logged_user_id;";
+
+$run = $db->query($sql);
+$results = $run->fetch_all(MYSQLI_ASSOC);
+
+$transactions = array_reverse($results);
 
 // Logging out
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -87,5 +101,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <form method="POST">
             <button type="submit" class="logout-btn">Logout</button>
         </form>
+
+        <div class="transactions">
+            <?php foreach ($transactions as $transaction): ?>
+                <div class="transaction">
+                    <p>Sender ID: <?php
+                    
+                    $sender_id = $transaction['sender_id'];
+                    $sql = "SELECT first_name FROM accounts WHERE id = $sender_id";
+                    $run = $db->query($sql);
+                    $results = $run->fetch_assoc();
+                    echo $results['first_name'];
+                    
+                    ?></p>
+                    <p>Recipient ID: <?php
+                    
+                    $recipient_id = $transaction['recipient_id'];
+                    $sql = "SELECT first_name FROM accounts WHERE id = $recipient_id";
+                    $run = $db->query($sql);
+                    $results = $run->fetch_assoc();
+                    echo $results['first_name'];
+                    
+                    ?></p>
+                    <p>Amount: <?php echo $transaction['amount'] ?></p>
+                    <p>Currency: <?php echo $transaction['currency'] ?></p>
+                    <p>Status: <?php echo $transaction['tr_status'] ?></p>
+                    <p>Created at: <?php echo $transaction['created_at'] ?></p>
+                </div>
+            <?php endforeach; ?>    
+        </div>
     </div>
 </div>
