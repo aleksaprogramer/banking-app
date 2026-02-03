@@ -70,12 +70,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             <div class="debit-cards">
                 <h4>Mastercard debit: <?php echo $logged_user['mastercard_debit'] ? 'Active' : 'Inactive' ?></h4>
                 <?php if (!$mastercard_debit_active): ?>
-                    <a href="http://localhost/projects/banking-app/?router=mastercard-activation">Activate</a>
+                    <a href="http://localhost/projects/banking-app/?router=mastercard-activation" class="activate-link">Activate</a>
                 <?php endif; ?>
 
                 <h4>Country card debit: <?php echo $logged_user['country_card_debit'] ? 'Active' : 'Inactive' ?></h4>
                 <?php if (!$country_card_debit_active): ?>
-                    <a href="http://localhost/projects/banking-app/?router=country-card-activation">Activate</a>
+                    <a href="http://localhost/projects/banking-app/?router=country-card-activation" class="activate-link">Activate</a>
                 <?php endif; ?>
             </div>
         </div>

@@ -1,0 +1,26 @@
+.country-card-activation {
+    padding-top: 20px;
+}
+
+.country-card-activation h2 {
+    margin-bottom: 20px;
+}
+
+.country-card-activation .activate-btn {
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    color: #2a2a2a;
+    background-color: #14ee47;
+    border: 1px solid #14ee47;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.country-card-activation .activate-btn:hover {
+    color: #14ee47;
+    background-color: #2a2a2a;
+}

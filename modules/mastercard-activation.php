@@ -44,10 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 
 <div class="mastercard-activation">
-    <h2>Mastercard Activation</h2>
+    <div class="container">
+        <h2>Mastercard Activation</h2>
 
-    <form method="POST">
-        <input type="hidden" name="mastercard" value="1">
-        <button type="submit">Activate</button>
-    </form>
+        <form method="POST">
+            <input type="hidden" name="mastercard" value="1">
+            <button type="submit" class="activate-btn">Activate</button>
+        </form>
+    </div>
 </div>

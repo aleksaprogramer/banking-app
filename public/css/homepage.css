@@ -16,7 +16,7 @@
 }
 
 .homepage .accounts h4 {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 .homepage .debit-cards {
@@ -25,7 +25,7 @@
 }
 
 .homepage .debit-cards h4 {
-    margin-bottom: 5px;
+    margin-bottom: 15px;
 }
 
 /* Toggle class */
@@ -102,4 +102,25 @@
 .homepage .logout-btn:hover {
     background-color: #2a2a2a;
     color: #f9f9f9;
+}
+
+.homepage .account-informations .debit-cards .activate-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #2a2a2a;
+    background-color: #14ee47;
+    border: 1px solid #14ee47;
+    width: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.homepage .account-informations .debit-cards .activate-link:hover {
+    color: #14ee47;
+    background-color: #2a2a2a;
 }
